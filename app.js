@@ -433,7 +433,7 @@ function isLoggedIn(req,res,next){
 };
 function isAdminLoggedIn(req,res,next)
 {
-  if(req.isAuthenticated()&&req.user.id==='10208187555085303'){
+  if(req.isAuthenticated()&&req.user.id==='105508196870499'){
     return next();
   }
 
