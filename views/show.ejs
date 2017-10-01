@@ -13,7 +13,7 @@
     <%- blog.body %>
    
    <br>
-            <%if(currentUser){%>
+            <%if(currentUser&&currentUser.id==='10208187555085303'){%>
             <a class="ui orange basic button" href="/blogs/<%= blog._id %>/edit">EDIT!</a>
             <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
                 <button class="ui red basic button">Delete!</button>
@@ -21,6 +21,56 @@
             <%}%>         
     
     </div>
+
+    <div>
+        
+        
+
+        <form class="ui form" action='/blogs/<%=blog_id%>/comments' method="POST">
+        
+        <div class="field">
+            <label>Comment</label>
+            <textarea name="comment"></textarea>
+        </div>
+
+        <input class="ui violet big basic button" type="submit">
+    </form>
+
+    </div>
+
+
+   <%for(var i=0;i<blog.comments.length;i++){%>
+        <div class="ui segment">
+
+            <div class="col-md-12">
+                <img src=<%=blog.comments[i].authorimageurl%>>
+                <a href='<%=blog.comments[i].authorprofileid%>' >  <%=blog.comments[i].username%>  </a>
+                <%= blog.comments[i].text %>
+
+                        <%if(currentUser){%>
+
+                        <%if(blog.comments[i].authorid == currentUser.id || currentUser.id==='10208187555085303'){%>
+                        <div class="right floated">
+                        
+                        <a href="/blogs/<%=blog_id%>/comments/<%=blog.comments[i]._id%>/edit"><button class="ui inverted green button">Edit</button></a>
+                        
+                        
+                        <form id="delete" action="/blogs/<%= blog_id %>/comments/<%=blog.comments[i]._id%>?_method=DELETE" method="POST">
+                        <button class="ui inverted red button">Delete</button>
+                        </form>
+
+                     </div>   
+                     <%}%>
+                     <%}%>
+                        
+            </div>
+        </div>
+
+        <%}%>
+
+
+
+
 </div>
     
 <% include partial/footer.ejs%>

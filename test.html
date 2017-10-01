@@ -1,0 +1,54 @@
+
+	<form class="ui form" action="/blogs/id/comments" method="POST">
+        
+        <div class="field">
+            <label>Comment</label>
+            <textarea name="comment"></textarea>
+        </div>
+
+        <input class="ui violet big basic button" type="submit">
+    </form>
+
+
+
+
+    <%for(var i=0;i<blog.comments.length;i++){%>
+        <div class="row">
+
+        	<div class="col-md-12">
+        		<img src=<%=blog.comments[i].authorimageurl%>>
+        		<a href='<%=blog.comments[i].authorprofileid%>' >  <%=blog.comments[i].username%>  </a>
+        		<p><%= blog.comments[i].text %></p>
+
+        		 <%if(currentUser&&(CurrentUser.id==='10208187555085303'||CurrentUser.id===blogs.comments[i].authorid)){%>
+                        <a class="btn btn-success" href="/blogs/<%=blog_id%>/comments/<%=blogs.comments[i]._id%>/edit">Edit</a>
+                        
+                        <form id="delete" action="/blogs/<%= blog_id %>/comments/<%=campground.comments[i]._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                        </form>
+                        <%}%>
+        	</div>
+        </div>
+
+        <%}%>
+
+
+
+<div class="ui divided items">
+    <%for(var i=0;i<blog.comments.length;i++){%>
+
+        <img src=<%=blog.comments[i].authorimageurl%>>
+        <a href='<%=blog.comments[i].authorprofileid%>' >  <%=blog.comments[i].username%>  </a>
+             - <%= blog.comments[i].text %>
+        <br>
+    <%}%>
+</div>
+
+
+
+
+        
+
+        <%if(currentUser&&(CurrentUser.id==='10208187555085303'||CurrentUser.id===blogs.comments[i].authorid)){%>
+
+        <%}%>
