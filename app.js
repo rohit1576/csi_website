@@ -100,7 +100,7 @@ app.use(passport.session());
 passport.use(new fbstrategy({
     clientID: '952555494907249' ,
     clientSecret: '10cbad9a78273eee8642d84963afd2b4' ,
-    callbackURL: 'https://quiet-fjord-60849.herokuapp.com/login/facebook/return',
+    callbackURL: 'http://localhost:3000/login/facebook/return',
     profileFields: ['id', 'displayName', 'photos', 'email','profileUrl']
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -130,7 +130,7 @@ app.use(function(req,res,next){
 
 app.get("/",function(req,res)
 {
-   res.redirect("/blogs"); 
+   res.render('home'); 
 });
 
 app.get("/blogs",function(req,res){
@@ -433,7 +433,7 @@ function isLoggedIn(req,res,next){
 };
 function isAdminLoggedIn(req,res,next)
 {
-  if(req.isAuthenticated()&&req.user.id==='105508196870499'){
+  if(req.isAuthenticated()&&req.user.id==='10208187555085303'){
     return next();
   }
 
@@ -441,7 +441,7 @@ function isAdminLoggedIn(req,res,next)
 }
 
 
-app.listen(process.env.PORT,function()
+app.listen(3000,function()
 {
     console.log("Server has started at 3000!!");
 });

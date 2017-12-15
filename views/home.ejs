@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500|Roboto:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Lilita+One|Monoton|Verela" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="http://www.nsit.ac.in/static/images/societies/CSI.jpg"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.css">
+
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/loader.css">
+    
+    <title>CSI</title>
+   
+</head>
+<body>
+    
+    
+    <div class="ui fixed inverted menu">
+            <div class="ui container">
+                
+                <a href="/" class="item">Home</a>
+                <a href="/blogs" class="item">Blogs</a>
+                
+                <%if(currentUser){%>
+                    <%if(currentUser.id==='10208187555085303'){%>
+                <a href="/blogs/new" class="item">New Post</a>
+                <%}%>
+
+                <a href="/logout" class="item float right">Logout</a>
+                <%}%>
+
+                <%if(!currentUser){%>
+               <a href="/login" class="item float right">Login</a> 
+               <%}%>
+                
+            </div>
+        </div>
+       
+
+    <div id="canvas">
+        <h1 id="topBannerHead">CSI</h1><br>
+        <h6 id="topBannerSubhead">NSIT</h6>
+    </div>
+    <div class="rest">
+        <div id="firstflex" class="flex-container">
+            <img class="clogo" src="/csiLogo.png">
+            <div class="textcontainer">
+            <p class="textfoot">
+                    CSI NSIT is the computer science and technological society of NSIT. We aim at bridging the gap between the technology and academia of the institute. We encourage other students to delve into the world of computer science and technology by providing ample amount of opportunities and the right platform to hone their skills.
+            </p></div>
+        </div>
+        <div class="flex-container">
+            <div class="card">
+                <img class="itemimg" src="/CSItechntalk.jpg">
+                <p class="textfoot">A platform to clear all queries, doubts and qualms, a budding tech enthusiast is often flooded with.</p>
+            </div>
+            <div class="card">
+                <img class="itemimg" src="/CSIbitsnbytesOSR.jpg">
+                <p class="textfoot">Bi-Annual Tech Magazine of CSI NSIT.</p>
+            </div>
+            <div class="card">
+                    <img class="itemimg" src="/CSIcompetitionsOSR.jpg">
+                    <p class="textfoot">Competitions organized by CSI NSIT that caters to various tech spheres-designing, web development along with cliché programming.</p>
+            </div>
+            <div class="card">
+                    <img class="itemimg" src="/webtutorials.jpg">
+                    <p class="textfoot">Do you want to make a website of your own? Here is a small help from our side for making you skilled enough for achieving that goal.</p>
+            </div>
+            <div class="card">
+                    <img class="itemimg" src="/CSIworkshops.jpg">
+                    <p class="textfoot">Workshops provide a glimpse outside of academia and link your thinking to industry.</p>
+            </div>
+            <div class="card">
+                    <img class="itemimg" src="/CSItechelonOSR.jpg">
+                    <p class="textfoot">Annual inter-college tech fest of CSI NSIT.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div style="position: relative;">
+        <a href="https://github.com/CSI-NSIT/"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+        &nbsp; &nbsp;
+        </div>
+        <a href="https://www.facebook.com/csinsit"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
+        <div style="position: relative;">
+        <p class="textfoot">CSI NSIT</p>
+        </div>
+    </div>
+    
+
+    <script src="/three.min.js"></script>
+    
+    
+
+    <script src="/wow.js"></script>
+    <script src="/script_index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+        
+</body>
+</html>

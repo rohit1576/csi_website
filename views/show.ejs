@@ -13,7 +13,7 @@
     <%- blog.body %>
    
    <br>
-            <%if(currentUser&&currentUser.id==='105508196870499'){%>
+            <%if(currentUser&&currentUser.id==='10208187555085303'){%>
             <a class="ui orange basic button" href="/blogs/<%= blog._id %>/edit">EDIT!</a>
             <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
                 <button class="ui red basic button">Delete!</button>
@@ -49,7 +49,7 @@
 
                         <%if(currentUser){%>
 
-                        <%if(blog.comments[i].authorid == currentUser.id || currentUser.id==='105508196870499'){%>
+                        <%if(blog.comments[i].authorid == currentUser.id || currentUser.id==='10208187555085303'){%>
                         <div class="right floated">
                         
                         <a href="/blogs/<%=blog_id%>/comments/<%=blog.comments[i]._id%>/edit"><button class="ui inverted green button">Edit</button></a>
