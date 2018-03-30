@@ -42,24 +42,7 @@ var blogSchema =new mongoose.Schema({
 
 var Blog = mongoose.model("blog",blogSchema);
 
-// var adminSchema = new mongoose.Schema({
-//   username: String,
-//   password: String
-// });
-// adminSchema.plugin(passportlocalmongoose);
 
-// var Admin = mongoose.model("Admin",adminSchema);
-
-// var newadmin = new Admin({username:'CSIAdmin'});
-// Admin.register(newadmin,'helloworld',function(err,user)
-// {
-//   if(err)
-//     console.log('error while registering CSIAdmin');
-//   else
-//   {
-//     passport.authenticate("local");
-//   }
-// });
 
 var userSchema = new mongoose.Schema({
   facebookid: Number,
@@ -93,9 +76,7 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//passport.use(new localstrategy(Admin.authenticate()));
-//passport.serializeUser(User.serializeUser());
-//passport.deserializeUser(User.deserializeUser());
+
 
 passport.use(new fbstrategy({
     clientID: '952555494907249' ,
@@ -225,16 +206,7 @@ app.delete("/blogs/:id",isAdminLoggedIn,function(req, res){
    //redirect somewhere
 });
 
-// app.get('/login',function(req,res){
-//   res.render("login");
-// });
 
-// app.post('/login',passport.authenticate("local",{
-//   successRedirect: "/blogs/new",
-//   failureRedirect: "/login"
-// }),function(req,res){
-
-// });
 
 
 
@@ -306,28 +278,7 @@ app.post('/blogs/:id/comments',isLoggedIn,function(req,res){
     {
       
         
-// var x = 'me?access_token=EAANiWBvnHXEBADZAMTbhNrPyZAcpvfCPaKtvbjEHj97fZBRYzHnJGRZAAW5OGAieIaU6GybrZBONVYZAbQ4nae0ZBUgTQ55KsJbhuQM6a8HynP21tRsi3WEUxcKf7erg5blE4bvUJZCJZCHdYhdRHXCN82cSb79p7xI8ZD&fields=id,picture';
-//           FB.api(x,function(data,err) {
-//             if(err)
-//               console.log('fatal error!');
-//             else
-//             {
-//               //console.log(data.id);
-//               //console.log(data.picture.data.url)
 
-//               var tempcomment = {};
-//               tempcomment.text = req.body.comment;
-//               tempcomment.authorid = req.user.id;
-//               tempcomment.username = req.user.displayName;
-
-//               tempcomment.authorprofileid = data.id;
-//               tempcomment.authorimageurl = data.picture.data.url;
-
-              
-
-//             }
-                  
-//                 });  
 
             var tempcomment = {};
             tempcomment.text = req.body.comment,
@@ -433,7 +384,7 @@ function isLoggedIn(req,res,next){
 };
 function isAdminLoggedIn(req,res,next)
 {
-  if(req.isAuthenticated()&&req.user.id==='10208187555085303'){
+  if(req.isAuthenticated()&&req.user.id==='105508196870499'){
     return next();
   }
 
