@@ -81,7 +81,7 @@ app.use(passport.session());
 passport.use(new fbstrategy({
     clientID: '952555494907249' ,
     clientSecret: '10cbad9a78273eee8642d84963afd2b4' ,
-    callbackURL: 'http://localhost:3000/login/facebook/return',
+    callbackURL: 'http://ec2-13-127-227-39.ap-south-1.compute.amazonaws.com/login/facebook/return',
     profileFields: ['id', 'displayName', 'photos', 'email','profileUrl']
   },
   function(accessToken, refreshToken, profile, cb) {
