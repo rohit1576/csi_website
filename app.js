@@ -114,6 +114,10 @@ app.get("/",function(req,res)
    res.render('home'); 
 });
 
+app.get('/team',function(req,res){
+  res.render('team');
+});
+
 app.get("/blogs",function(req,res){
    
    Blog.find({},function(err,blogs)
