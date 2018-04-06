@@ -87,15 +87,14 @@
 }
 #top {
     text-align: center;
-    background-color: #6067F1;
     width: 100%;
-    min-height: 100vh;
 }
 #top h3 {
     font-family: 'Lato', sans-serif;
-    color: #6067F1;
+    color: #568283;
     font-size: 5em;
     font-weight: bold;
+    margin-top: 10vh;
 }
 #top p {
     padding: 50px 20px;
