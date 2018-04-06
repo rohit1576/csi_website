@@ -22,9 +22,9 @@ app.use(methodOverride("_method"));
 
 var mongoose = require("mongoose");
 
-//mongoose.connect("mongodb://localhost/restful",{useMongoClient: true});
+mongoose.connect("mongodb://localhost/restful",{useMongoClient: true});
 
-mongoose.connect("mongodb://rohit:password@ds155644.mlab.com:55644/csiwebsite",{useMongoClient: true});
+//mongoose.connect("mongodb://rohit:password@ds155644.mlab.com:55644/csiwebsite",{useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 
@@ -81,7 +81,7 @@ app.use(passport.session());
 passport.use(new fbstrategy({
     clientID: '952555494907249' ,
     clientSecret: '10cbad9a78273eee8642d84963afd2b4' ,
-    callbackURL: 'http://ec2-13-127-227-39.ap-south-1.compute.amazonaws.com/login/facebook/return',
+    callbackURL: 'http://www.csinsit.org/login/facebook/return',
     profileFields: ['id', 'displayName', 'photos', 'email','profileUrl']
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -112,6 +112,10 @@ app.use(function(req,res,next){
 app.get("/",function(req,res)
 {
    res.render('home'); 
+});
+
+app.get('/team',function(req,res){
+  res.render('team');
 });
 
 app.get("/blogs",function(req,res){

@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title>The Team</title>
+    <link href="team.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="team_members.js"></script>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <div class="ui fixed inverted menu">
+            <div class="ui container">
+                
+                <a href="/" class="item">Home</a>
+                <a href="/blogs" class="item">Blogs</a>
+                <a href="/team" class="item">Team</a>
+                <a href="https://techeloncsinsit.herokuapp.com/" class="item">Techelon</a>
+                <%if(currentUser){%>
+                    <%if(currentUser.id==='10208187555085303'){%>
+                <a href="/blogs/new" class="item">New Post</a>
+                <%}%>
+
+                <a href="/logout" class="item float right">Logout</a>
+                <%}%>
+
+                <%if(!currentUser){%>
+               <a href="/login" class="item float right">Login</a> 
+               <%}%>
+                
+            </div>
+        </div>
+    <div id="top">
+        <!--<ul id="nav">
+        <a href="#"><li>HOME</li></a>
+        <a href="#"><li>TEAM</li></a>
+        <a href="#"><li>CONTACT US</li></a>
+        </ul>-->
+        <center>
+        <!--<div id="box">-->
+            <h3>TEAM OF CSI</h3>
+        <!--    
+            <p>We’re the  based in San Diego. Our team works with organizations of all sizes and types, in branding, design, interactive, and advertising. We focus on one thing: delivering creative that works.</p>
+        </div>
+-->
+        </center>
+    </div>
+	<div id="cover">
+        <!--
+        <h1>THE TEAM</h1>
+        <p>* Insert random team quote here *</p>
+        -->
+        <div class="mps">
+            <img src="https://raw.githubusercontent.com/CSI-NSIT/csinsit.org/master/img/team/MPSbhatia-sir.jpg">
+            <p>Dr. MPS Bhatia<br>
+            Teacher In-Charge</p>
+        </div>
+        <br>  
+
+    </div>
+    <footer>
+           <div class="row">
+                    <div class="col-sm-6">
+                        <p class="copyright">© Copyright 2018 <a href="http://wwww.technextit.com" target="_blank">CSI Nsit</a></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="designed">Designed and Developed by <a href="http://themewagon.com" target="_blank">Rohit, Anshul and Parikansh</a></p>
+                    </div>
+                
+            </div>
+            </footer>
+    
+    <script>
+        
+    </script>
+</body>
+</html>
