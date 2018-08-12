@@ -41,7 +41,11 @@ $(function() {
             '<p>Parikansh Ahluwalia<br>'+
             'Board Member</p>'+
         '</div>');
-    
+    cover.append('<div class="person">' +
+            '<img src="team_images/sanchit.jpg">'+
+            '<p>Sanchit Aggarwal<br>'+
+            'Board Member</p>'+
+        '</div>');
     cover.append('<div class="person">' +
             '<img src="team_images/TanviDadu.jpg">'+
             '<p>Tanvi Dadu<br>'+
@@ -74,7 +78,7 @@ $(function() {
         '</div>');
     cover.append('<div class="person">' +
             '<img src="team_images/awesid.jpg">'+
-            '<p>Abhishek Vanjani<br>'+
+            '<p>Siddharth Narayan<br>'+
             'Board Member</p>'+
         '</div>');
 });
