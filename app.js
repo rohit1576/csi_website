@@ -22,9 +22,9 @@ app.use(methodOverride("_method"));
 
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/restful",{useMongoClient: true});
+//mongoose.connect("mongodb://localhost/restful",{useMongoClient: true});
 
-//mongoose.connect("mongodb://rohit:password@ds155644.mlab.com:55644/csiwebsite",{useMongoClient: true});
+mongoose.connect("mongodb://rohit:password@ds155644.mlab.com:55644/csiwebsite",{useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 
@@ -396,7 +396,7 @@ function isAdminLoggedIn(req,res,next)
 }
 
 
-app.listen(3000,function()
+app.listen(process.env.PORT||80,function()
 {
     console.log("Server has started at 3000!!");
 });
